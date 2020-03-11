@@ -106,15 +106,33 @@ function onMessageArrived(message) {
 	/**
 	 * @private
 	 */
-	var localStorage = global.localStorage || (function () {
-		var data = {};
+	var localStorage
 
-		return {
-			setItem: function (key, item) { data[key] = item; },
-			getItem: function (key) { return data[key]; },
-			removeItem: function (key) { delete data[key]; },
-		};
-	})();
+	try
+	{
+		localStorage = global.localStorage || (function () {
+			var data = {};
+	
+			return {
+				setItem: function (key, item) { data[key] = item; },
+				getItem: function (key) { return data[key]; },
+				removeItem: function (key) { delete data[key]; },
+			};
+		})();
+	}
+
+	catch ( err )
+	{
+		localStorage = (function () {
+			var data = {};
+	
+			return {
+				setItem: function (key, item) { data[key] = item; },
+				getItem: function (key) { return data[key]; },
+				removeItem: function (key) { delete data[key]; },
+			};
+		})();
+	}
 
 		/**
 	 * Unique message type identifiers, with associated

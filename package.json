@@ -1,11 +1,11 @@
 {
-	"name": "paho-client",
+	"name": "@meowwolf/paho-client",
 	"description": "Eclipse Paho JavaScript MQTT client",
 	"version": "1.1.0",
 	"main": "./src/paho-mqtt.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/eclipse/paho.mqtt.javascript.git"
+		"url": "https://github.com/MeowWolf/paho.mqtt.javascript"
 	},
 	"license": "EPL-1.0",
 	"devDependencies": {
